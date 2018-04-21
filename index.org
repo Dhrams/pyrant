@@ -105,7 +105,15 @@ n**** Dharsh-TODO Add .c files to Matlab
 Effectively, make it thin and increase strength on thin frames by two planks. Go Deformable Bodies!
 *** Vi-TODO Laser-cut at the invention studio
 
-
+* Description of cascaded PID
+**** Inner most loop refers to the rate control. Uses Gryo as plant and feedback
+***** outputs deg/sec
+**** Next level refers to the attitude (tangent of accelerometer) control. Uses the accelerometer as feedback and plant
+***** outputs deg
+**** Next level is velocity PID. Uses OpenCV block as feedback and plant.
+***** outputs ft/sec
+**** Final level is postition. Uses OpenCV + Integrator to get position feedback.
+***** outputs ft
 * Inventory
 
 |----------+------------------------------+---------+---------+--------------------------------------|
